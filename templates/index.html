@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+ {% extends 'base.html' %}
+<title>{% block title %} Github Search Tool {% endblock title %}</title>
+{% block body %}
+<div class="search-container">
+  <h2 class="mobile-header">GitHub Repo Search</h2>
+  <form id="search-form" action="/repos/" method="POST" >
+    <div class="mobile-menu">
+      <div class="filter-dropdown">
+        <label for="topic-dropdown">Topic:</label>
+        <select id="topic-dropdown" name="topic">
+          <option value="Select Topic" disabled>Select Topic</option>
+          <option value="python">Python</option>
+          <option value="machine-learning">Machine Learning</option>
+          <option value="data-science">Data Science</option>
+          <option value="AI">AI</option>
+          <option value="javascript">JavaScript</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+      <div class="filter-dropdown">
+        <label for="topic-dropdown">Programming:</label>
+        <select id="topic-dropdown" name="language">
+          <option value="">Select Language</option>
+          <option value="python">Python Programming</option>
+          <option value="javascript">JavaScript</option>
+          <option value="R">R programming</option>
+          <option value="java">Java programming</option>
+                 <!-- Add more options as needed -->
+        </select>
+      </div>
+      <div class="filter-dropdown">
+        <label for="rating-dropdown">Rating:</label>
+        <select id="rating-dropdown" name="rating">
+          <option value="">Select Rating</option>
+          <option value="1000">>1000 stars</option>
+          <option value="10000">>10,000 stars</option>
+          <option value="20000">>20,000 stars</option>
+           <option value="30000">>30,000 stars</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+      <div class="search-button-container">
+    <button type="submit" class="btn btn-primary search-button">Search</button>
+  </div>
+    </div>
+  </form>
+</div>
+<footer class="footer">
+    <p>&copy; 2023 GitHub Search. All rights reserved.</p>
+  </footer>
+<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock body%}

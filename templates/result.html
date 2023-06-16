@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+ {% extends 'base.html' %}
+<title>{% block title %} Github Search Tool {% endblock title %}</title>
+{% block body %}
+
+    
+   <div class="container">
+        <h1>Search Results</h1>
+        <a href="/" class="btn btn-primary top-right">Back to Search</a>
+
+        {% if repositories %}
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>URL</th>
+                        <th>Stars</th>
+                        <th>Forks</th>
+                        <th>Owner</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% set counter = 1 %}
+
+                    {% for repo in repositories %}
+                    <tr>
+                        <td> {{loop.index}}</td>
+                        <td>{{ repo['name'] }}</td>
+                        <td><a href="{{ repo['html_url'] }}" target="_blank">{{ repo['html_url'] }}</a></td>
+                        <td>{{ repo['stargazers_count'] }}</td>
+                        <td>{{ repo['forks_count'] }}</td>
+                        <td>{{ repo['owner']['login'] }}</td>
+                        {% set counter = counter + 1 %}
+                    </tr>
+                    
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p>No repositories found.</p>
+        {% endif %}
+
+    </div>
+    <footer class="footer">
+    <p>&copy; 2023 GitHub Search. All rights reserved.</p>
+  </footer>
+{% endblock body%}
+
