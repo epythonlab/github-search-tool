@@ -1,6 +1,8 @@
 # routes/index.py 
 # route to templates page
-from flask import Flask, url_for, render_template
+from flask import (Flask, url_for, 
+	render_template, Blueprint, 
+	request, current_app)
 from models.filter import Filter
 
 # create and configure the blueprint
@@ -36,5 +38,5 @@ def search():
             #if repo['stargazers_count'] >= int(rating):
             filtered_repos.append(repo)
 
-    # Redirect back to the index page with search parameters as query parameters
+    # Redirect to the result page with search parameters as query parameters
     return  render_template('result.html', topic=topic, rating=rating, repositories = filtered_repos)

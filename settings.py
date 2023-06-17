@@ -10,4 +10,4 @@ class Config(object):
     # Enable debug mode.
     DEBUG = True
     # put your token here
-    TOKEN = "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"
+    TOKEN = "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"
