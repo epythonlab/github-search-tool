@@ -1,4 +1,4 @@
-# index.py 
+# routes/index.py 
 # route to index.html page
 from flask import *
 from models.filter import Filter
@@ -21,8 +21,8 @@ def index():
 	except TemplateNotFound:
 		abort(404)
 
-@index_bp.route('/repos/', methods=['POST'])
-def search():
+		@index_bp.route('/repos/', methods=['POST'])
+		def search():
     # Get the selected values from the form
     topic = request.form.get('topic')
     rating = request.form.get('rating')
@@ -30,7 +30,7 @@ def search():
     repositories = Filter.search_repositories_by_topic(language, topic, rating, current_app.config['TOKEN'])
     filtered_repos = []
     if repositories is not None:
-        for repo in repositories:
+    	for repo in repositories:
             #if repo['stargazers_count'] >= int(rating):
             filtered_repos.append(repo)
 
