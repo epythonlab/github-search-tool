@@ -15,9 +15,20 @@ Usage:
 """
 import os
 
+# pylint: disable=too-few-public-methods
 class Config:
     """
-    Config class containing the configuration settings for the application.
+    Configuration class for the application.
+
+    This class holds the configuration settings for the application,
+    such as the secret key, base directory, debug mode, and token.
+
+    Attributes:
+        SECRET_KEY (str): A secret key for the application.
+        basedir (str): The absolute path of the directory where the script runs.
+        DEBUG (bool): Enable or disable debug mode.
+        TOKEN (str): The token for authentication.
+
     """
 
     SECRET_KEY = os.urandom(32)
@@ -26,4 +37,4 @@ class Config:
     # Enable debug mode.
     DEBUG = True
     # put your token here
-    TOKEN = "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"
+    TOKEN = "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"
