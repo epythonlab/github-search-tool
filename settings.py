@@ -2,6 +2,7 @@
 # Configuration, just like it says on the cover
 import os
 
+
 class Config(object):
 
     SECRET_KEY = os.urandom(32)

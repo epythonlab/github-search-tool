@@ -13,7 +13,6 @@ app = Flask(__name__)
 app.config.from_object('settings.Config')
 
 with app.app_context():
-	from routes import index
-	# register the index route 
-	app.register_blueprint(index.index_bp)
-
+    from routes import index
+    # register the index route
+    app.register_blueprint(index.index_bp)
