@@ -1,9 +1,25 @@
-# config.py
-# Configuration, just like it says on the cover
+"""
+config.py
+
+This module contains the configuration settings for the application.
+
+Classes:
+- Config: Represents the configuration object with various settings.
+
+Attributes:
+- SECRET_KEY: A random string used for cryptographic purposes.
+- basedir: The absolute path of the directory where the script runs.
+- DEBUG: A boolean value indicating whether debug mode is enabled.
+- TOKEN: The token used for authentication.
+
+Usage:
+- Import the Config class from this module to access the configuration settings.
+- Modify the attributes of the Config class to customize the application's behavior.
+"""
 import os
 
 
-class Config(object):
+class Config:
 
     SECRET_KEY = os.urandom(32)
     # Grabs the folder where the script runs.
