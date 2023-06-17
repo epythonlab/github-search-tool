@@ -16,7 +16,7 @@ The Github Repo Search Tool provides enhanced search functionality, allowing use
 
 4. Sorting by Top Rated: The search results can be sorted by the rating or popularity of the repositories. This feature allows users to view the repositories in descending order of their ratings, helping them identify the most highly rated repositories.
 
-## Installation
+## Installation and Configuration
 
 To install and use this project, please follow the steps below:
 
@@ -41,13 +41,43 @@ To install and use this project, please follow the steps below:
 7. Obtain your own token from GitHub and replace it in the `settings.py` file. Look for the line:
   `TOKEN = 'your token'`
 
+Replace 'your token' with your actual token.
+
+Once you have completed these steps, you should have the project installed and configured on your local machine. You can proceed to run the application and explore its features.
+
+To run the server, execute the following command in your terminal:
+  `python3 wsgi.py`
+
+This will start the server, and you will be able to access the application by visiting the appropriate URL in your web browser.
+
 ## Usage
 
-Provide instructions on how to use your project. You can include code examples or screenshots if necessary.
+After installing and setting up the project, run the server using the command python3 wsgi.py.
 
-## Configuration
+Open your web browser and navigate to the URL where the server is running (usually http://localhost:5000).
 
-Explain any configuration options or environment variables that need to be set up for your project.
+On the home page, you will see a search form where you can specify your search criteria.
+
+Choose a topic from the dropdown menu to search for repositories related to that topic.
+
+Optionally, select a rating option to filter the repositories by their star rating.
+
+You can also choose a programming language from the dropdown menu to further refine your search.
+
+Click on the "Search" button to initiate the search.
+
+The search results will be displayed on the next page, showing the repositories that match your criteria.
+
+Each repository will be listed with its name, description, star rating, and other relevant information.
+
+You can click on a repository to view more details and explore its contents.
+
+Use the navigation links at the top or bottom of the page to navigate through the search results pages.
+
+To perform a new search, simply go back to the home page and enter new search criteria.
+
+Enjoy exploring and discovering interesting GitHub repositories based on your search preferences!
+![Step 1](path/to/step1.png)
 
 ## Contributing
 
