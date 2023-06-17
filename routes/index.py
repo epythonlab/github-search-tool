@@ -1,6 +1,6 @@
 # routes/index.py 
-# route to index.html page
-from flask import *
+# route to templates page
+from flask import Flask, url_for, render_template
 from models.filter import Filter
 
 # create and configure the blueprint
@@ -21,8 +21,10 @@ def index():
 	except TemplateNotFound:
 		abort(404)
 
-		@index_bp.route('/repos/', methods=['POST'])
-		def search():
+
+# route to the search page
+@index_bp.route('/repos/', methods=['POST'])
+def search():
     # Get the selected values from the form
     topic = request.form.get('topic')
     rating = request.form.get('rating')
