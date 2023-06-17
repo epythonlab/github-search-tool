@@ -3,9 +3,6 @@ config.py
 
 This module contains the configuration settings for the application.
 
-Classes:
-- Config: Represents the configuration object with various settings.
-
 Attributes:
 - SECRET_KEY: A random string used for cryptographic purposes.
 - basedir: The absolute path of the directory where the script runs.
@@ -18,8 +15,10 @@ Usage:
 """
 import os
 
-
 class Config:
+    """
+    Config class containing the configuration settings for the application.
+    """
 
     SECRET_KEY = os.urandom(32)
     # Grabs the folder where the script runs.
