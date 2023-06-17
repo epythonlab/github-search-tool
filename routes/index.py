@@ -1,9 +1,17 @@
-# routes/index.py
-# route to templates page
-from flask import (Flask, url_for,
-                   render_template, Blueprint,
-                   request, TemplateNotFound,
-                   abort, current_app)
+"""
+routes/index.py
+
+This module defines the routes for the Flask application.
+It contains routes for the index page and the search page.
+
+Routes:
+- index: Renders the index page.
+- search: Handles the search form submission and renders the result page.
+
+"""
+
+from flask import (render_template, Blueprint,
+                   request, current_app)
 from models.filter import Filter
 
 # create and configure the blueprint
@@ -17,24 +25,28 @@ index_bp = Blueprint(
 
 @index_bp.route('/', methods=['GET'])
 def index():
-    try:
-        # Get the search parameters from query parameters
-        # topic = request.args.get('topic')
-        # rating = request.args.get('rating')
+    """
+    Renders the index page.
 
-        return render_template('index.html')
-    except TemplateNotFound:
-        abort(404)
+    Returns:
+        The rendered index page template.
+    """
+    return render_template('index.html')
 
 
 # route to the search page
 @index_bp.route('/repos/', methods=['POST'])
 def search():
-    # Get the selected values from the form
+    """
+    Handles the search form submission and renders the result page.
+
+    Returns:
+        The rendered result page template with the search parameters and filtered repositories.
+    """
     topic = request.form.get('topic')
     rating = request.form.get('rating')
     language = request.form.get('language')
-    repositories = Filter.search_repositories_by_topic(
+    repositories = Filter.search_repositories(
         language, topic, rating, current_app.config['TOKEN'])
     filtered_repos = []
     if repositories is not None:
