@@ -11,8 +11,9 @@ class Filter(object):
 	    headers = {
 	        'Authorization': f'Token {token}',
 	        'Accept': 'application/vnd.github.v3+json'
-	    }
-	    #url = f'https://api.github.com/search/repositories?q=topic:{topic}+stars:>{min_rating}'
+	        }
+	        
+	    # url = f'https://api.github.com/search/repositories?q=topic:{topic}+stars:>{min_rating}'
 	    # search query contains
 	    # lanuague, topic or tag and name contains the selected topic
 	    # rating

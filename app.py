@@ -4,7 +4,6 @@
 	and import the routes and register the blueprint
 	import Flask module
 """
-
 from flask import Flask
 
 # construct the code app objects
