@@ -123,34 +123,82 @@ body{
   /* Add your container styles here */
 }
 
-.progress-container {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-}
+/* css loading while button is click on */
+/* Add the CSS styles for the waiting message here */
+    .waiting-message {
+      display: none; /* Initially hide the waiting message */
+      color: #ffffff;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+      position: fixed;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
-.progress-spinner {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #3498db;
+    .waiting-spinner {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border: 3px solid #ffffff;
+      border-top-color: #3498db;
+      border-radius: 50%;
+      animation: spin 1s infinite linear;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+/* github search tool icon generator */
+.icon-github-search {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #007bff;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  animation: spin 1s linear infinite;
+  position: relative;
+  overflow: hidden;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.icon-github-search::before,
+.icon-github-search::after {
+  content: "";
+  display: block;
+  position: absolute;
 }
 
-.show {
-  display: flex;
+.icon-github-search::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 50%;
 }
+
+.icon-github-search::after {
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+
+.icon-github-search::before,
+.icon-github-search::after {
+  transition: background-color 0.3s;
+}
+
+.icon-github-search:hover::before,
+.icon-github-search:hover::after {
+  background-color: #f0f0f0;
+}
+
 
 
 .footer {

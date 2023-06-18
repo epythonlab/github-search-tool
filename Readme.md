@@ -52,32 +52,30 @@ This will start the server, and you will be able to access the application by vi
 
 ## Usage
 
-After installing and setting up the project, run the server using the command python3 wsgi.py.
+After installing and setting up the project, run the server using the command `python3 wsgi.py`.
 
-Open your web browser and navigate to the URL where the server is running (usually http://localhost:5000).
+Open your web browser and navigate to the URL where the server is running (usually `http://localhost:5000`).
 
 On the home page, you will see a search form where you can specify your search criteria.
+![Step 1](static/images/1.png)
 
-Choose a topic from the dropdown menu to search for repositories related to that topic.
+Write a topic on the search bar and choose the programming language and rating from the drop-down menu as shown in the above picture to search for repositories related to that criteria.
 
-Optionally, select a rating option to filter the repositories by their star rating.
-
-You can also choose a programming language from the dropdown menu to further refine your search.
-
-Click on the "Search" button to initiate the search.
+Click on the "Search" button to initiate the search. It will show you the waiting message as shown below:
+![Step 1](static/images/2.png)
 
 The search results will be displayed on the next page, showing the repositories that match your criteria.
 
-Each repository will be listed with its name, description, star rating, and other relevant information.
+Each repository will be listed with its name, URL, star rating, fork count, and other relevant information.
+![Step 1](static/images/3.png)
 
 You can click on a repository to view more details and explore its contents.
 
-Use the navigation links at the top or bottom of the page to navigate through the search results pages.
 
 To perform a new search, simply go back to the home page and enter new search criteria.
 
 Enjoy exploring and discovering interesting GitHub repositories based on your search preferences!
-![Step 1](path/to/step1.png)
+
 
 ## Contributing
 

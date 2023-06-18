@@ -6,6 +6,8 @@
   <div class="row">
     <div class="col-12">
       <div class="search-container">
+        <span class="icon-github-search"></span>
+
         <h2 class="mobile-header">GitHub Repo Search</h2>
         <form id="search-form" action="/repos/" method="POST">
           <div class="row">
@@ -50,10 +52,11 @@
             <div class="col-md-12 mt-3">
               <div class="search-button-container">
                 <!-- Search bar and dropdowns go here -->
-                      <button id="search-button" type="submit" class="btn btn-primary">Search</button>
-                      <div id="progress-container" class="progress-container">
-                        <div class="progress-spinner"></div>
-                      </div>
+                      <button id="search-button" type="submit" class="button btn btn-primary">Search</button>
+                      <div class="waiting-message" id="waiting-message">
+                       <div class="waiting-spinner"></div>
+                       <p>Please wait...</p>
+                     </div>
 
             </div>
           </div>
@@ -68,6 +71,7 @@
 <footer class="footer">
     <p>&copy; 2023 GitHub Search. All rights reserved.</p>
   </footer>
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
 {% endblock body%}

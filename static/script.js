@@ -1,31 +1,15 @@
-document.querySelector('.search-button').addEventListener('click', function() {
-  var topicSelect = document.getElementById('topic-select');
-  var ratingSelect = document.getElementById('rating-select');
-
-  var selectedTopic = topicSelect.value;
-  var selectedRating = ratingSelect.value;
-
-  // Perform the search based on the selected values
-  // Add your search logic here
-
-  console.log("Selected Topic:", selectedTopic);
-  console.log("Selected Rating:", selectedRating);
-});
-
-function toggleDropdown() {
-  var dropdownContent = document.getElementById("topic-dropdown");
-  dropdownContent.style.display = "block";
-}
+// Add JavaScript/jQuery code to show/hide the waiting message when the button is clicked
+  document.getElementById('search-button').addEventListener('click', function() {
+    var waitingMessage = document.getElementById('waiting-message');
+    // hide the button when the loading button is shown
+    let btn = document.getElementById('search-button');
+    btn.style.display = 'none';
+    // visible the waiting message while the button is clicked on
+    waitingMessage.style.display = 'block'; // Show the waiting message
 
 
-$(document).ready(function() {
-  $('#search-button').click(function() {
-    var $progressContainer = $('#progress-container');
-    $progressContainer.toggleClass('show');
-
-    // Simulating a delay of 3 seconds for demonstration purposes
+    // Simulate a delay to mimic network request
     setTimeout(function() {
-      $progressContainer.removeClass('show');
-    }, 3000);
+      waitingMessage.style.display = 'none'; // Hide the waiting message
+    }, 3000 * 3000 * 3000 * 3000); // 3 seconds delay (adjust as needed)
   });
-});

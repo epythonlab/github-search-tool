@@ -37,4 +37,4 @@ class Config:
     # Enable debug mode.
     DEBUG = True
     # put your token here
-    TOKEN = "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"
+    TOKEN = "Put your token"
