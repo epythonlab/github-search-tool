@@ -3,10 +3,11 @@
 <title>{% block title %} Github Search Tool {% endblock title %}</title>
 {% block body %}
 
-    
+
    <div class="container">
         <h1>Search Results</h1>
-        <a href="/" class="btn btn-primary top-right">Back to Search</a>
+        <a href="/" class="btn btn-primary mb-3"><i class="fas fa-arrow-left"></i>
+Back to Search</a>
 
         {% if repositories %}
         <div class="table-responsive">
@@ -34,7 +35,7 @@
                         <td>{{ repo['owner']['login'] }}</td>
                         {% set counter = counter + 1 %}
                     </tr>
-                    
+
                     {% endfor %}
                 </tbody>
             </table>
@@ -48,4 +49,3 @@
     <p>&copy; 2023 GitHub Search. All rights reserved.</p>
   </footer>
 {% endblock body%}
-

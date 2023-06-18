@@ -10,9 +10,9 @@ Routes:
 
 """
 
-from flask import (render_template, Blueprint,
-                   request, current_app)
+from flask import (render_template, Blueprint, request, current_app)
 from models.filter import Filter
+
 
 # create and configure the blueprint
 index_bp = Blueprint(
@@ -43,11 +43,10 @@ def search():
     Returns:
         The rendered result page template with the search parameters and filtered repositories.
     """
-    topic = request.form.get('topic')
+    topic = request.form.get('topic').replace(' ', '-')
     rating = request.form.get('rating')
     language = request.form.get('language')
-    repositories = Filter.search_repositories(
-        language, topic, rating, current_app.config['TOKEN'])
+    repositories = Filter.search_repositories(language, topic, rating, current_app.config['TOKEN'])
     filtered_repos = []
     if repositories is not None:
         for repo in repositories:

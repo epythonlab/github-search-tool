@@ -2,52 +2,72 @@
  {% extends 'base.html' %}
 <title>{% block title %} Github Search Tool {% endblock title %}</title>
 {% block body %}
-<div class="search-container">
-  <h2 class="mobile-header">GitHub Repo Search</h2>
-  <form id="search-form" action="/repos/" method="POST" >
-    <div class="mobile-menu">
-      <div class="filter-dropdown">
-        <label for="topic-dropdown">Topic:</label>
-        <select id="topic-dropdown" name="topic">
-          <option value="Select Topic" disabled>Select Topic</option>
-          <option value="python">Python</option>
-          <option value="machine-learning">Machine Learning</option>
-          <option value="data-science">Data Science</option>
-          <option value="AI">AI</option>
-          <option value="javascript">JavaScript</option>
-          <!-- Add more options as needed -->
-        </select>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="search-container">
+        <h2 class="mobile-header">GitHub Repo Search</h2>
+        <form id="search-form" action="/repos/" method="POST">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="filter-dropdown">
+                <label for="search-input" class="form-label float-start">Search:</label>
+                <input type="text" class="form-control" id="search-input" name="topic" placeholder="Enter search query">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="filter-dropdown mt-3">
+                <label for="topic-dropdown" class="form-label float-start">Programming:</label>
+                <select id="topic-dropdown" name="language" class="form-select" data-width="100%">
+                  <option value="" selected>Select Language</option>
+                  <option value="python">Python</option>
+                  <option value="javascript">JavaScript</option>
+                  <option value="R">R</option>
+                  <option value="java">Java</option>
+                    <option value="java">SQL</option>
+                  <!-- Add more options as needed -->
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="filter-dropdown mt-3">
+                <label for="rating-dropdown" class="form-label float-start">Rating:</label>
+                <select id="rating-dropdown" class="form-select" name="rating">
+                  <option value="" selected>Select Rating</option>
+                  <option value="1000">>1000 stars</option>
+                  <option value="10000">>10,000 stars</option>
+                  <option value="20000">>20,000 stars</option>
+                  <option value="30000">>30,000 stars</option>
+                  <!-- Add more options as needed -->
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 mt-3">
+              <div class="search-button-container">
+                <!-- Search bar and dropdowns go here -->
+                      <button id="search-button" type="submit" class="btn btn-primary">Search</button>
+                      <div id="progress-container" class="progress-container">
+                        <div class="progress-spinner"></div>
+                      </div>
+
+            </div>
+          </div>
+        </form>
       </div>
-      <div class="filter-dropdown">
-        <label for="topic-dropdown">Programming:</label>
-        <select id="topic-dropdown" name="language">
-          <option value="">Select Language</option>
-          <option value="python">Python Programming</option>
-          <option value="javascript">JavaScript</option>
-          <option value="R">R programming</option>
-          <option value="java">Java programming</option>
-                 <!-- Add more options as needed -->
-        </select>
-      </div>
-      <div class="filter-dropdown">
-        <label for="rating-dropdown">Rating:</label>
-        <select id="rating-dropdown" name="rating">
-          <option value="">Select Rating</option>
-          <option value="1000">>1000 stars</option>
-          <option value="10000">>10,000 stars</option>
-          <option value="20000">>20,000 stars</option>
-           <option value="30000">>30,000 stars</option>
-          <!-- Add more options as needed -->
-        </select>
-      </div>
-      <div class="search-button-container">
-    <button type="submit" class="btn btn-primary search-button">Search</button>
-  </div>
     </div>
-  </form>
+  </div>
 </div>
+
+
+
 <footer class="footer">
     <p>&copy; 2023 GitHub Search. All rights reserved.</p>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
 {% endblock body%}
