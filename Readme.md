@@ -95,4 +95,4 @@ You can reach out to us on the following platforms:
 - Telegram: <i class="fab fa-telegram"></i>https://epythonlab.t.me/
 - Facebook: <i class="fab fa-facebook"></i>https://facebook.com/epythonlab1/
 - YouTube: <i class="fab fa-youtube"></i>https://youtube.com/@epythonlab/
-- LinkedIn: <i class="fab fa-linkedin"></i>https://linkedin/page/epythonlab/
+- LinkedIn: <i class="fab fa-linkedin"></i>https://linkedin/company/epythonlab/
